@@ -2,6 +2,7 @@ package br.ufrgs.cpd.inventario.network
 
 import br.ufrgs.cpd.inventario.models.*
 import br.ufrgs.ufrgsapi.network.pojo.ApiAnswer
+import io.reactivex.Observable
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -41,7 +42,8 @@ interface AppService {
                    @Field("CodPessoaColeta") CodPessoaColeta : String?,
                    @Field("CodOrgao") CodOrgao : String?,
                    @Field("DataHoraColeta") DataHoraColeta : String?,
-                   @Field("IndicadorAndroid") IndicadorAndroid : String?
+                   @Field("IndicadorAndroid") IndicadorAndroid : String?,
+                   @Field("IndicadorOcioso") IndicadorOcioso : String
     ) : Call<ResponseBody>
 
     @GET("v1/inventario/coleta/{patrimonio}")
@@ -57,8 +59,12 @@ interface AppService {
     @GET("v1/inventario/estados-conservacao")
     fun getEstadosConservacao(@Header("Authorization") auth : String): Call<ApiAnswer<EstadosList>>
 
-    @GET("v1/pessoa/{cartao}")
-    fun getCorresponsavel(@Header("Authorization") auth : String, @Path("cartao") cartao : String): Call<ApiAnswer<Pessoa>>
+    @GET("v1/servidor/{tipo-de-identificador}")
+    fun getCorresponsavel(@Header("Authorization") auth : String, @Path("tipo-de-identificador") identificador : String): Call<ApiAnswer<ListPessoas>>
 
+    @GET("v1/orgao/direcao/{codOrgao}")
+    fun getDiretor(@Header("Authorization") auth : String, @Path("codOrgao") codOrgao : String): Call<ResponseBody>
 
+    @GET("v1/inventario/bem/descricoes")
+    fun getDescricaoPadrao(@Header("Authorization") auth : String) : Observable<ApiAnswer<BemDescricoesWrapper>>
 }

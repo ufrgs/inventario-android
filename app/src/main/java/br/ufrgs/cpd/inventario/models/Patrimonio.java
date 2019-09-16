@@ -28,6 +28,12 @@ public class Patrimonio implements Serializable {
     @SerializedName("Serie")
     @Expose
     public String serie;
+    @SerializedName("OrgaoResponsavel")
+    @Expose
+    public String orgaoResponsavel;
+    @SerializedName("NomeOrgaoResponsavel")
+    @Expose
+    public String nomeOrgaoResponsavel;
     @SerializedName("MarcaModeloSerie")
     @Expose
     public String marcaModeloSerie;

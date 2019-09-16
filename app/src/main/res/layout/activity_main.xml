@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
     tools:layout_editor_absoluteY="25dp">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,32 +32,32 @@
                 android:padding="5dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_person_white_24dp"
+                app:srcCompat="@drawable/ic_person_white_24dp"
                 />
 
         </RelativeLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.3">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
             android:id="@+id/cv1"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/md_white_1000"
             android:orientation="vertical">
@@ -68,32 +68,33 @@
                 android:layout_height="wrap_content"
                 android:background="?selectableItemBackground"
                 android:clickable="true"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <TextView
                     android:id="@+id/btn1_txt"
-                    android:layout_width="175dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:ellipsize="end"
                     android:gravity="left|center_vertical"
+                    android:maxLines="1"
                     android:paddingLeft="6dp"
                     android:text="Órgão"
                     android:textColor="@color/colorAccent"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+                    />
 
                 <ImageView
                     android:id="@+id/ic_search1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search_24dp"
-                    />
-
+                    app:srcCompat="@drawable/ic_search_24dp" />
 
             </LinearLayout>
 
             <View
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="4dp"
                 android:background="@color/colorAccent" />
@@ -102,10 +103,11 @@
 
         <LinearLayout
             android:id="@+id/cv2"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/md_white_1000"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="invisible">
 
             <LinearLayout
                 android:id="@+id/btn2"
@@ -117,28 +119,29 @@
 
                 <TextView
                     android:id="@+id/btn2_txt"
-                    android:layout_width="175dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:ellipsize="end"
                     android:gravity="left|center_vertical"
+                    android:maxLines="1"
                     android:paddingLeft="6dp"
                     android:text="Prédio"
                     android:textColor="@color/colorAccent"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+                    />
 
                 <ImageView
                     android:id="@+id/ic_search2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search_24dp"
-                    />
+                    android:src="@drawable/ic_search_24dp" />
 
 
             </LinearLayout>
 
             <View
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="4dp"
                 android:background="@color/colorAccent" />
@@ -147,10 +150,11 @@
 
         <LinearLayout
             android:id="@+id/cv3"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/md_white_1000"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="invisible">
 
             <LinearLayout
                 android:id="@+id/btn3"
@@ -162,28 +166,29 @@
 
                 <TextView
                     android:id="@+id/btn3_txt"
-                    android:layout_width="175dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:ellipsize="end"
                     android:gravity="left|center_vertical"
+                    android:maxLines="1"
                     android:paddingLeft="6dp"
                     android:text="Espaço Físico"
                     android:textColor="@color/colorAccent"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:layout_weight="1"
+                    />
 
                 <ImageView
                     android:id="@+id/ic_search3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search_24dp"
-                    />
+                    android:src="@drawable/ic_search_24dp" />
 
 
             </LinearLayout>
 
             <View
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="4dp"
                 android:background="@color/colorAccent" />
@@ -196,12 +201,11 @@
         android:id="@+id/btn_barcode"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="Codigo de barras"
         android:textColor="@color/md_white_1000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
@@ -210,13 +214,37 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/md_grey_600"
         android:text="Digitar patrimônio"
         android:textColor="@color/md_white_1000"
+        app:layout_constraintEnd_toEndOf="@+id/btn_barcode"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btn_barcode"
+        app:layout_constraintTop_toBottomOf="@+id/btn_barcode" />
+
+    <!--<Button
+        android:id="@+id/btn_ntr"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Bem NTR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_barcode" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_digit" />-->
+
+    <Button
+        android:id="@+id/btn_no_plate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/md_white_1000"
+        android:text="Bem Sem Placa"
+        android:textColor="@color/md_grey_600"
+        app:layout_constraintEnd_toEndOf="@+id/btn_digit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btn_digit"
+        app:layout_constraintTop_toBottomOf="@+id/btn_digit" />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

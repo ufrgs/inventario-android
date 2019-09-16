@@ -1,6 +1,6 @@
 package br.ufrgs.cpd.inventario.utils;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import br.ufrgs.cpd.inventario.R;

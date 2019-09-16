@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="br.ufrgs.cpd.inventario">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,10 +14,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".ui.splash_screen.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             >
@@ -27,33 +30,54 @@
         </activity>
 
         <activity
-            android:name=".ui.main_screen.MainActivity"
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+
+        <activity
+            android:name=".ui.main.MainActivity"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".ui.login_screen.LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".ui.search_screen.SearchActivity"
+            android:name=".ui.edit.SelectStateActivity"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".ui.edit_ecreen.EditActivity"
+            android:name=".ui.search.SearchActivity"
             android:screenOrientation="portrait"
             />
 
         <activity
-            android:name=".ui.pendencias_screen.PendenciasActivity"
+            android:name=".ui.edit.EditActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".ui.pendencias.PendenciasActivity"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".ui.config_screen.ConfigActivity"
+            android:name=".ui.config.ConfigActivity"
             android:screenOrientation="portrait"
             />
+
+        <activity
+            android:name=".ui.tutorial.TutorialActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".ui.tag.TagsActivity"
+            android:screenOrientation="portrait"
+            />
+
     </application>
 
 </manifest>
