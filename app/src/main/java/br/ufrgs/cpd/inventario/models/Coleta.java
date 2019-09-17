@@ -1,7 +1,5 @@
 package br.ufrgs.cpd.inventario.models;
 
-import br.ufrgs.ufrgsapi.token.UfrgsTokenManager;
-
 /**
  * Created by Theo on 04/10/2017.
  */
@@ -10,7 +8,7 @@ public class Coleta {
 
     public Coleta() {}
 
-    public Coleta(Patrimonio patrimonio, String codPredio, String codEspacoFisico, String codOrgao) {
+    public void initColeta(Patrimonio patrimonio, String codPredio, String codEspacoFisico, String codOrgao) {
         NrPatrimonio = patrimonio.nrPatrimonio;
         Nome = patrimonio.nome;
         Marca = patrimonio.marca;
@@ -26,7 +24,9 @@ public class Coleta {
         Foto = null;
         CodPessoaColeta = patrimonio.codPessoaResponsavel;
         CodOrgao = codOrgao;
+        IndicadorOcioso = false;
     }
+
     public String NrPatrimonio;
     public String Nome;
     public String Marca;
@@ -42,4 +42,5 @@ public class Coleta {
     public String Foto;
     public String CodPessoaColeta;
     public String CodOrgao;
+    public Boolean IndicadorOcioso;
 }

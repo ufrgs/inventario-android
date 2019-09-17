@@ -19,4 +19,7 @@ public class Predio implements Serializable {
     @SerializedName("CodEspacoFisico")
     @Expose
     public String CodEspacoFisico;
+    @SerializedName("CodSemantico")
+    @Expose
+    public String CodSemantico;
 }

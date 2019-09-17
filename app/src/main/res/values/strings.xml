@@ -2,5 +2,11 @@
     <string name="app_name">Inventário</string>
     <string name="password_portal">Senha</string>
 
+    <string name="intro1">Informe o local da coleta</string>
+    <string name="intro2">Leia o código de barras ou digite o número do patrimônio</string>
+    <string name="intro3">Não tem plaquinha? \nEscolha a opção "BEM SEM PLACA"</string>
+    <string name="intro4">Se houver pendência, não esqueça de sinalizar</string>
+
+    <string name="tag">Use a etiqueta * no bem coletado.</string>
 
 </resources>

@@ -4,10 +4,9 @@ import android.app.Activity
 import android.content.res.Resources
 import android.graphics.Color
 import android.os.Build
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
-import android.view.View
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import android.view.Window
 import android.view.WindowManager
 import br.ufrgs.cpd.inventario.R
@@ -66,6 +65,21 @@ object LayoutUtils {
 
         if (isModal) {
             toolbar.navigationIcon = ContextCompat.getDrawable(activity, R.drawable.ic_arrow_back_white_24dp)
+            toolbar.setNavigationOnClickListener { activity.onBackPressed() }
+        }
+    }
+
+    fun setupToolbar(activity: AppCompatActivity, toolbar: Toolbar, title: String?, isModal: Boolean, icon: Int) {
+        activity.setSupportActionBar(toolbar)
+        if (title != null) {
+            activity.supportActionBar!!.title = title
+            toolbar.setTitleTextColor(activity.resources.getColor(R.color.md_white_1000))
+        } else {
+            activity.supportActionBar!!.setDisplayShowTitleEnabled(false)
+        }
+
+        if (isModal) {
+            toolbar.navigationIcon = ContextCompat.getDrawable(activity, icon)
             toolbar.setNavigationOnClickListener { activity.onBackPressed() }
         }
     }
