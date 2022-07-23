@@ -5,4 +5,6 @@
     <color name="colorAccent">#898989</color>
 
     <color name="black_semi_transparent">#73000000</color>
+    <color name="blue_tag_background">#5285b0</color>
+    <color name="red_and_white_tag_background">#d12800</color>
 </resources>

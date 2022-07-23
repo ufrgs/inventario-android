@@ -7,6 +7,7 @@
     <string name="intro3">Não tem plaquinha? \nEscolha a opção "BEM SEM PLACA"</string>
     <string name="intro4">Se houver pendência, não esqueça de sinalizar</string>
 
-    <string name="tag">Use a etiqueta * no bem coletado.</string>
+    <string name="tag">Use a etiqueta %s no bem coletado.</string>
+    <string name="wrong_user_or_password">Usuário ou senha incorretos</string>
 
 </resources>

@@ -1,7 +1,6 @@
 package br.ufrgs.cpd.inventario.ui.tag
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.appcompat.app.AppCompatActivity
@@ -19,18 +18,9 @@ class TagsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tag)
         LayoutUtils.setupToolbar(this, toolbar,"Etiqueta", false)
-
-        if (color == TagColors.YELLOW) {
-            tag_message.text = getString(R.string.tag).replace("*", "amarela")
-            tv_color.text = "Amarela"
-            bg_color.setCardBackgroundColor(Color.YELLOW)
-            img_tag.setColorFilter(ContextCompat.getColor(this, R.color.md_yellow_700), android.graphics.PorterDuff.Mode.SRC_IN)
-        } else {
-            tag_message.text = getString(R.string.tag).replace("*", "vermelha")
-            tv_color.text = "Vermelha"
-            bg_color.setCardBackgroundColor(Color.RED)
-            img_tag.setColorFilter(ContextCompat.getColor(this, R.color.md_red_700), android.graphics.PorterDuff.Mode.SRC_IN)
-        }
+        tag_message.text = getString(R.string.tag, color.colorName)
+        bg_color.setCardBackgroundColor(color.id)
+        img_tag.setColorFilter(ContextCompat.getColor(this, color.id), android.graphics.PorterDuff.Mode.SRC_IN)
 
         ok_button.setOnClickListener {
             finish()

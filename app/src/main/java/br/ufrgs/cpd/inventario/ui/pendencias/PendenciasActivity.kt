@@ -48,7 +48,7 @@ class PendenciasActivity : AppCompatActivity(), PendenciasContract.View {
                 if (listPendencias.isEmpty() && type == EditActivity.TYPE_NO_PLATE) {
                     toast("Você deve selecionar ao menos uma pendência.")
                 } else {
-                    presenter.savePendencias(listPendencias, nrSeqColeta)
+                    nrSeqColeta?.let { it1 -> presenter.savePendencias(listPendencias, it1) }
                 }
             }
         }
@@ -62,7 +62,7 @@ class PendenciasActivity : AppCompatActivity(), PendenciasContract.View {
             pendencia.descricaoPendencia = "Alterar Descrição Padronizada"
             listPendencias.add(pendencia)
             showMessage("Foi adicionada uma pendência para alterar a descrição padronizada deste bem.")
-            presenter.savePendencias(listPendencias, nrSeqColeta)
+            nrSeqColeta?.let { presenter.savePendencias(listPendencias, it) }
         }
 
     }
@@ -82,9 +82,9 @@ class PendenciasActivity : AppCompatActivity(), PendenciasContract.View {
 
     override fun showTagActivity() {
         val color = if (type == EditActivity.TYPE_NO_PLATE || listPendencias.isNotEmpty()) {
-            TagColors.RED
+            TagColors.WHITE_AND_RED
         } else {
-            TagColors.YELLOW
+            TagColors.BLUE
         }
 
         TagsActivity.start(this, color)

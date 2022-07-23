@@ -61,7 +61,7 @@ class SearchActivity : AppCompatActivity(), SearchContract.View, TextWatcher, It
             }
 
             "espaco_fisico" -> {
-                presenter.getEspacosFisicos(intent.getStringExtra("predio"))
+                intent.getStringExtra("predio")?.let { presenter.getEspacosFisicos(it) }
             }
 
             OP_DESCRICOES -> {

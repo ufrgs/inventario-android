@@ -122,13 +122,13 @@ class EditView(val activity: Activity) : EditContract.View {
         when (type) {
             EditActivity.TYPE_NTR -> {
                 activity.finish()
-                TagsActivity.start(activity, TagColors.RED)
+                TagsActivity.start(activity, TagColors.WHITE_AND_RED)
             }
             EditActivity.TYPE_PLATE -> {
                 activity.alert("A descrição do bem está correta?") {
                     positiveButton("Sim") {
                         activity.finish()
-                        TagsActivity.start(activity, TagColors.YELLOW)
+                        TagsActivity.start(activity, TagColors.BLUE)
                     }
 
                     negativeButton("Não") {
