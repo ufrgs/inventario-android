@@ -187,7 +187,7 @@ class EditView(val activity: Activity) : EditContract.View {
 
     override fun verifyOrgao() {
         if (codorgao != patrimonio?.orgaoResponsavel) {
-            activity.alert("O orgão selecionado não corresponde com o orgão do patrimônio") {
+            activity.alert("Este bem ${patrimonio?.nrPatrimonio} está registrado na carga do órgão ${patrimonio?.orgaoResponsavel}. Você confirma a transferência da responsabilidade para o órgão ${codorgao}?") {
                 yesButton { d -> d.dismiss() }
             }.show()
         }
