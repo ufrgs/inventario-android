@@ -155,13 +155,13 @@ class MainActivity : AppCompatActivity(), MainScreenContract.View {
         toast(string)
     }
 
-    override fun showNtrMessage(string: String, nrPatrimonio: String) {
+    override fun showNtrMessage(string: String, nrPatrimonio: String, isPropertyWithoutRegistration: Boolean) {
         progressDialog?.dismiss()
 
         alert(string) {
             yesButton { d ->
                 d.dismiss()
-                if (string == "Bem não tem registro (NTR)") {
+                if (isPropertyWithoutRegistration) {
                     EditActivity.startNtr(this@MainActivity, nrPatrimonio, EditActivity.TYPE_NTR, mSelectedOrgao!!.CodOrgao, mSelectedOrgao!!.NomeOrgao, mSelectedPredio!!.CodPredio, mSelectedEspacoFisico!!.codEspacoFisico)
                 }
             }

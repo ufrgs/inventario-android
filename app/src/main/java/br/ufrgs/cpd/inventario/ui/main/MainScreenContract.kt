@@ -9,7 +9,7 @@ interface MainScreenContract {
     interface View {
         fun onItemReady(patrimonio : Patrimonio)
         fun showMessage(string: String)
-        fun showNtrMessage(string: String, nrPatrimonio: String)
+        fun showNtrMessage(string: String, nrPatrimonio: String, isPropertyWithoutRegistration: Boolean = false)
     }
 
     interface Presenter {

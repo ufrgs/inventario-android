@@ -9,5 +9,5 @@
 
     <string name="tag">Use a etiqueta %s no bem coletado.</string>
     <string name="wrong_user_or_password">Usuário ou senha incorretos</string>
-
+    <string name="property_without_registration">“Não foi identificado bem com este número de registro, não é possível efetuar a leitura, informe os dados manualmente”.</string>
 </resources>

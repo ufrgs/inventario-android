@@ -1,6 +1,7 @@
 package br.ufrgs.cpd.inventario.ui.main
 
 import android.content.Context
+import br.ufrgs.cpd.inventario.R
 import br.ufrgs.cpd.inventario.models.Patrimonio
 import br.ufrgs.cpd.inventario.network.ApiBuilder
 import br.ufrgs.cpd.inventario.network.AppService
@@ -36,7 +37,7 @@ class MainScreenPresenter(val mContext: Context, val mView : MainScreenContract.
                         val json = JSONObject(response.errorBody()!!.string())
                         val msg = json.getString("message")
                         if (msg.contentEquals("ntr")){
-                            mView.showNtrMessage("Bem não tem registro (NTR)", nrPatrimonio)
+                            mView.showNtrMessage(mContext.getString(R.string.property_without_registration), nrPatrimonio, true)
 
                         } else {
                             mView.showMessage(response.message())
